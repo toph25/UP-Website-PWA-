@@ -1,0 +1,69 @@
+page-feed-list {
+  text-align: center;
+  .hid{
+    color: #014421;
+  }
+
+  .feed-list {
+    background: #7b1113;
+    .feed-article {
+      .read-more-state {
+          display: none;
+        }
+
+        .read-more-target {
+          opacity: 0;
+          max-height: 0;
+          font-size: 0;
+          transition: .25s ease;
+        }
+
+        .read-more-state:checked ~ .read-more-wrap .read-more-target {
+          opacity: 1;
+          font-size: inherit;
+          max-height: 999em;
+        }
+
+        .read-more-state ~ .read-more-trigger:before {
+          content: 'Show more';
+        }
+
+        .read-more-state:checked ~ .read-more-trigger:before {
+          content: 'Show less';
+        }
+
+        .read-more-trigger {
+          cursor: pointer;
+          display: inline-block;
+          padding: 0 .5em;
+          color: #666;
+          font-size: .9em;
+          line-height: 2;
+          border: 1px solid #ddd;
+          border-radius: .25em;
+        }
+      height: auto;
+      background: #ffffff;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      border-top: 0px;
+      color: #000000;
+    }
+    ion-list > .item:first-child, ion-list > .item-wrapper:first-child .item {
+      border-top: 0px;
+    }
+    ion-list .item .item-inner {
+      border-bottom: 0px;
+    }
+    .article-title {
+      font-weight: bold;
+    }
+  }
+ 
+  #feed-spinner {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    height: 100px;
+  }
+}

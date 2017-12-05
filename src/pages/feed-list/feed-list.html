@@ -1,0 +1,44 @@
+<!--
+  Generated template for the FeedListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+  (click)="openArticle(item.encoded)"
+-->
+<ion-header>
+  <ion-navbar secondary>
+    <ion-buttons left>
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+    <img alt="UPD Logo" height="40"   src="assets/imgs/updlogo.png">
+    <ion-title *ngIf="!selectedFeed">UPD Website</ion-title>
+    <ion-title>{{selectedFeed?.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content class="feed-list" padding>
+  <!--ion-spinner *ngIf="loading" id="feed-spinner"></ion-spinner-->
+  <ion-list *ngIf="selectedFeed" class="spinner">
+    <ion-item *ngFor="let item of articles" (click)="viewMore(item.encoded)" class="feed-article">
+      <div class="article-title">{{item.title}}</div><br>
+
+      <p [innerHtml]="item.description"></p>
+      <ion-navbar secondary>
+	  <button ion-button   action secondary>
+	      <ion-icon name="More"></ion-icon> More
+	    </button>
+	   </ion-navbar>
+      <!--p class="read-more-wrap">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<span class="read-more-target"></span></p-->
+     
+    </ion-item>
+  </ion-list>
+  <ion-row *ngIf="!selectedFeed">
+    <ion-col text-center>
+        <button ion-button color="dark" (click)="hide()" action secondary>
+        Welcome to UP Website
+    </button>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,13 @@
+{
+  "name": "Ionic",
+  "short_name": "UPD Website",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/imgs/updlogo.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#014421",
+  "theme_color": "#4e8ef7"
+}
